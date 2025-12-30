@@ -1,5 +1,130 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html, 
-body {
+body,
+.grid-container {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-areas: 
+    ".... head ...."
+    "main main main"
+    "foot foot foot";
+}
+
+/* header section */
+header {
+    grid-area: head;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1rem;
+    margin: 0 auto 0 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    margin: 0 0 0 auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #0E0E0E;
+    font-weight: bold;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #6b6b6b;
+}
+
+a:active {
+    cursor: pointer;
+    color: #424242;
+}
+/* main section */
+
+main {
+    grid-area: main;
+}
+
+/* hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    padding: 4em 2em 1em 1em;
+    color: #FFFFFF;
+    background-image: url('../images/article-image-hero.png');
+    background-size: cover;
+}
+
+.hero p,
+.hero h2 {
+    margin: 0;
+}
+
+/* blog section */
+.blogs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    margin: 1em 0 0 0;
+}
+
+.blog {
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* footer section */
+footer {
+    display: block;
+    grid-area: foot;
+    margin: 0;
+    padding: 1em 5em;
+    width: 100%;
+    background-color: #202020;
+    text-align: center;
+}
+
+footer h2,
+footer p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+footer h2 {    
+    color: #ECECEC;
+}
+
+footer p {
+    color: #D7D7D7;
 }
