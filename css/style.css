@@ -27,6 +27,11 @@ body {
     "foot foot foot";
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 /* header section */
 header {
     grid-area: head;
@@ -110,7 +115,6 @@ footer {
     grid-area: foot;
     margin: 0;
     padding: 1em 5em;
-    width: 100%;
     background-color: #202020;
     text-align: center;
 }
@@ -127,4 +131,35 @@ footer h2 {
 
 footer p {
     color: #D7D7D7;
+}
+
+@media (min-width: 768px) {
+    header {
+        margin: 1em 2em;
+    }
+
+    .grid-container {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+                "head"
+                "main"
+                "foot";       
+    }
+
+    main {
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        gap: 1em;
+    }
+
+    .hero {
+        grid-row: 1fr;
+    }
+
+    .blogs {
+        grid-row: 2fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 2em;
+    }
 }
